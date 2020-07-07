@@ -1,7 +1,8 @@
 #include <vector>
+#pragma once
 
 class Motor {
-protected:
+public:
 
     int inertion;       // Момент инерции
     int T_overheat;     // Температура  перегрева мотора
@@ -13,9 +14,10 @@ protected:
     std::vector<int> V; // Для скорости вращения вала
 
 
+    Motor() {};
     Motor(int, int, double, double, double, double, std::vector<int>, std::vector<int>);
     virtual double motorHeat(int) = 0;          // Функция расчета нагрева мотора
     virtual double motorCooling(double) = 0;    // Функция подсчета скорости охлаждения мотора
-    virtual double CS_acceleration(int) = 0;       // Ускорение коленвала
+    virtual void CS_acceleration(int) = 0;    // Ускорение коленвала
 
 };

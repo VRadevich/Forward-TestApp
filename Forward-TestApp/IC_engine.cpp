@@ -13,8 +13,9 @@ double IC_engine::motorCooling( double T_environment) {
 
 }
 
-double IC_engine::CS_acceleration(int i) {
+void IC_engine::CS_acceleration(int i) {
 
-    return M[i] / inertion;
+   V[i] += M[i] / inertion;
 
 }
+
